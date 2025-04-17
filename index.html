@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SmartCV</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body class="light-mode">
+
+  <!-- Tema geçişi -->
+  <div class="text-end p-3">
+    <button id="themeToggle" class="btn btn-secondary">Koyu Mod</button>
+  </div>
+
+  <header class="bg-primary text-white text-center py-5">
+    <h1 id="cv-name">Adınız Soyadınız</h1>
+    <p id="cv-title">Pozisyon</p>
+    <p id="cv-contact">Email: ornek@mail.com | Tel: 555-555-5555</p>
+  </header>
+
+  <main class="container my-5">
+    <section>
+      <h2 class="section-title">Hakkımda</h2>
+      <div class="info-box" id="cv-about">Kendinizi tanıtan kısa bir açıklama burada görünecek.</div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Eğitim</h2>
+      <ul class="info-box list-group" id="cv-education"></ul>
+    </section>
+
+    <section>
+      <h2 class="section-title">İş Deneyimi</h2>
+      <ul class="info-box list-group" id="cv-experience"></ul>
+    </section>
+
+    <section>
+      <h2 class="section-title">Sertifikalar</h2>
+      <ul class="info-box list-group" id="cv-certifications"></ul>
+    </section>
+
+    <section>
+      <h2 class="section-title">Bilgileri Güncelle</h2>
+      <form id="cv-form" class="row g-3">
+        <div class="col-md-6">
+          <input type="text" class="form-control" id="name" placeholder="Ad Soyad" required>
+        </div>
+        <div class="col-md-6">
+          <input type="text" class="form-control" id="title" placeholder="Pozisyon" required>
+        </div>
+        <div class="col-md-6">
+          <input type="email" class="form-control" id="email" placeholder="Email" required>
+        </div>
+        <div class="col-md-6">
+          <input type="text" class="form-control" id="phone" placeholder="Telefon" required>
+        </div>
+        <div class="col-12">
+          <textarea class="form-control" id="about" rows="3" placeholder="Hakkınızda" required></textarea>
+        </div>
+
+        <div class="col-12">
+          <input type="text" class="form-control mb-2" id="education" placeholder="Eğitim Bilgisi">
+          <button type="button" class="btn btn-outline-primary mb-3" onclick="addItem('education')">Eğitim Ekle</button>
+        </div>
+
+        <div class="col-12">
+          <input type="text" class="form-control mb-2" id="experience" placeholder="İş Deneyimi">
+          <button type="button" class="btn btn-outline-success mb-3" onclick="addItem('experience')">İş Ekle</button>
+        </div>
+
+        <div class="col-12">
+          <input type="text" class="form-control mb-2" id="certification" placeholder="Sertifika">
+          <button type="button" class="btn btn-outline-warning mb-3" onclick="addItem('certifications')">Sertifika Ekle</button>
+        </div>
+
+        <div class="col-12 text-center">
+          <button type="submit" class="btn btn-primary mt-3">Güncelle</button>
+        </div>
+      </form>
+    </section>
+
+    <div class="text-end mt-4">
+      <button id="downloadPDF" class="btn btn-danger">PDF Olarak İndir</button>
+    </div>
+  </main>
+
+  <footer class="bg-primary text-white text-center py-3">
+    © 2025 SmartCV - Bootstrap ile hazırlandı
+  </footer>
+
+  <!-- Scriptler -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
